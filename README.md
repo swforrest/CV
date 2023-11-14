@@ -1,2 +1,2 @@
 # CV
-Creating a CV with markdown (and the vitae) package
+Creating a CV with markdown (and the vitae package)
