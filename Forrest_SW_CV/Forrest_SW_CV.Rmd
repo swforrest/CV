@@ -1,0 +1,261 @@
+---
+name: Scott William
+surname: Forrest
+position: "PhD Candidate"
+pronouns: he/him
+address: "School of Mathematical Sciences, Queensland University of Technology"
+phone: +61 436 392 070
+# www: mariecurie.com
+email: "scott.forrest@hdr.qut.edu.au"
+twitter: scottwilliamf
+github: swforrest
+linkedin: swforrest
+headcolor: 311B92
+date: "`r format(Sys.time(), '%B %Y')`"
+output:
+  vitae::awesomecv:
+    page_total: true
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(scholar)
+library(dplyr)
+
+```
+
+<!-- # Some stuff about me -->
+
+<!--  * I poisoned myself doing research. -->
+<!--  * I was the first woman to win a Nobel prize -->
+<!--  * I was the first person and only woman to win a Nobel prize in two different sciences. -->
+
+# Education
+
+```{r}
+
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~ Details,
+  
+  "PhD in Mathematical Sciences", "2022 -", "Queensland University of Technology", "Brisbane, Australia",
+  list("Thesis title: Modelling animal movement with stochastic simulations and deep learning",
+         "In my thesis I am developing new methodologies for modelling animal movement, with a focus on stochastic simulations.",
+       # "I intend to utilise emerging deep learning techniques to improve our ability to understand and predict animal movement.",
+       "I will apply the methodologies we develop to feral buffalo (\\textit{Bubalus bubalis}) and cattle (\\textit{Bos indicus}) in Northern Australia's tropical savannas."
+    ),
+  
+  "Master of Science in Wildlife Management", "2020-21", "University of Otago", "Dunedin, New Zealand",
+  list("Thesis title: Operation Kākā Repopulation: Using GPS tracking and spatial modelling to restore a flagship species.",
+         "During my thesis I GPS-tracked kākā (\\textit{Nestor meridionalis}) and quantified their space use and resource selection, as well as their behaviours through accelerometry data."
+    ),
+  
+  "Postgraduate Diploma in Wildlife Management", "2018-19", "University of Otago", "Dunedin, New Zealand",
+  list("Coursework-based diploma with a focus on field ecology."),
+  
+  "Bachelor of Engineering (with Honours) in Naval Architecture", "2012-16", "Flinders University and Australian Maritime College", "Adelaide and Launceston, Australia",
+  list("Honours thesis title: Ship-generated solitons and the dynamic vessel response as a function of blockage.")
+  
+) %>%
+  detailed_entries(Degree, Year, Institution, Where, Details)
+
+```
+
+# Relevant Employment History
+
+```{r education}
+
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, ~ details,
+  
+  "Tutor", "Queensland University of Technology", "Brisbane, Australia", "2023", 
+    list("Work Integrated Learning for Applied and Computational Mathematics (MXB328)"
+    ),
+  
+  "Teaching Fellow", "University of Otago", "Dunedin, New Zealand", "2020-21", 
+    list("Animal Biology (BIOL112)"),
+  
+  "Statistics Mentor for Postgraduate Students", "University of Otago", "Dunedin, New Zealand", "2019-21", 
+  list("Spatial ecology (home range estimation, resource selection, Species Distribution Modelling)",
+       "GLM/GLMM, model selection and multi-model inference",
+       "Animal growth data and nesting success"
+       ),
+  
+  "Demonstrator", "University of Otago", "Dunedin, New Zealand", "2018-21", 
+  list("Biological Data Analysis and Computing (ZOOL316/WILM404)",
+       "Conservation Biology (ZOOL319)",
+       "Animal Biology (BIOL112)",
+       "Cell Biology (CELS191)"
+       )
+
+) %>% 
+  detailed_entries(role, dates, company, loc, details)
+
+```
+
+# Publications
+
+```{r pubs}
+
+knitr::write_bib(c("vitae", "tibble"), "packages.bib")
+
+bibliography_entries("Publications-for-CV.bib") %>%
+  arrange(desc(issued))
+
+```
+
+# Presentations and Conference Attendance
+
+```{r presentations}
+
+tribble(
+  
+  ~ role, ~ dates,
+  
+  "CSIRO Living Landscapes Science Hour - \\textbf{presenter}", "2023",
+  "International Congress on Modelling and Simulation Conference - \\textbf{presenter}", "2023",
+  "Ecological Society of Australia Conference - \\textbf{presenter}", "2023",
+  "CSIRO Machine Learning and Artificial Intelligence Reimagining Science Symposium", "2023",
+  "Applied Mathematical Ecology Group Symposium - \\textbf{presenter}", "2023",
+  "Ecological Society of Australia / Society for Conservation Biology Oceania Conference - \\textbf{presenter}", "2022",
+  "Australian Data Science Network Conference", "2022",
+  "International Statistical Ecology Conference", "2022",
+  "Queensland and New Zealand Institute of Applied Mathematics Conference", "2022",
+  "International Biologging Society Conference (BLS7) - \\textbf{presenter}", "2021",
+  "University of Otago Zoology Departmental Seminar - \\textbf{presenter}", "2021",
+  "Birds NZ Conference - \\textbf{presenter}", "2021",
+  "Australasian Wildlife Management Society Conference - \\textbf{presenter}", "2020",
+  "Otago Postgraduate Research Symposium - \\textbf{presenter}", "2019"
+  
+) %>% 
+  
+  brief_entries(what = role, when = dates, .protect = FALSE)
+
+```
+
+# Volunteering, Fieldwork and Community Outreach
+
+<!-- \begin{cvparagraph} -->
+<!-- In addition to sessional tutoring, I also teach data analysis workshops for industry professionals. -->
+<!-- \end{cvparagraph} -->
+
+```{r volunteering}
+
+tribble(
+  ~ role, ~ organisation, ~ place, ~ dates, ~ details,
+  "PhD fieldwork", "Queensland University of Technology and CSIRO", "Arnhem Land, Australia", "2023", "Attaching GPS devices to feral buffalo (\\textit{Bubalus bubalis})",
+  "Education Outreach Team", "Orokonui Ecosanctuary", "Dunedin, New Zealand", "2020-21", "Educational tours for school and public groups within Orokonui Ecosanctuary.",
+  "Zoology Tertiary Open Day Coordinator", "University of Otago", "Dunedin, New Zealand", "2020", "Organising and running the Zoology stand at the University of Otago Tertiary Open Day.",
+  "Science Fair Judge", "Otago Museum", "Dunedin, New Zealand", "2020", "Judging science fair projects for secondary school students.",
+  "Kākā (\\textit{Nestor meridionalis}) Recovery Team", "Department of Conservation", "Fiordland National Park, New Zealand", "2019", "Mist-netting kākā and attaching telemetry devices.",
+  "Kākāpō (\\textit{Strigops habroptil}) Recovery Team", "Department of Conservation", "Whenua Hou (Codfish Island), New Zealand", "2019", "Juvenile kākāpō feeding and health checks, telemetry device attachment and triangulation.",
+  "Biodiversity Monitoring", "Dunedin Halo Project", "Dunedin, New Zealand", "2019", "Monitoring of pest control tracking tunnels.",
+  "Takahē (\\textit{Porphyrio hochstetteri}) Recovery Team", "Department of Conservation", "Kahurangi National Park", "2018", "Takahē telemetry triangulation and health checks.",
+  "Gray Wolf (\\textit{Canis lupus}) Program", "Montana Fish, Wildlife and Parks", "Western Montana, USA", "2017", "Gray wolf telemetry triangulation and assessment of presence through faeces and markings.",
+  "Puma/Jaguar Caretaker", "Comunidad Inti Wara Yassi (CIWY)", "Parque Ambue Ari, Bolivia", "2014", "Caring for rehabilitated pumas (\\textit{Puma concolor}) and jaguars (\\textit{Panthera onca})."
+) %>% 
+  brief_entries(glue::glue("\\textbf{<organisation>}: <role>, <place> \\newline <details>", .open = "<", .close = ">"), paste0(dates, "\\newline"), .protect = FALSE)
+
+```
+
+
+# Grants
+
+```{r grants}
+
+tribble(
+  
+  ~ role, ~ organisation, ~ dates, ~ amount, ~ details,
+  
+  "Principal Investigator", "University Teaching and Development Grant", "2020-21", "\\$10,124", "Integrating MOOC platform xOtago into the teaching of Zoology papers for future flexibility and resilience",
+  "Principal Investigator", "Dunedin City Council Parks and Reserves", "2020", "\\$15,000", "GPS tracking kākā from Orokonui Ecosanctuary",
+  "Principal Investigator", "OSPRI", "2020", "\\$7,000", "GPS tracking kākā from Orokonui Ecosanctuary",
+  "Principal Investigator", "High Country Contracting", "2020", "\\$2,000", "GPS tracking kākā from Orokonui Ecosanctuary"
+  
+  
+) %>% 
+  
+  brief_entries(glue::glue("\\textbf{<organisation>}: <role>, <amount> \\newline <details>", .open = "<", .close = ">"), paste0(dates, "\\newline"), .protect = FALSE)
+
+```
+
+\newpage
+
+# Scholarships and Awards
+
+```{r}
+
+tribble(
+  
+  ~ item, ~ dates,
+  
+  "QUT PhD Research Training Program (RTP) Stipend Scholarship", "2022-",
+  "Commonwealth Scientific and Industrial Research Organisation (CSIRO) Top-Up Scholarship", "2022-",
+  "International Biologging Society Conference (BLS7)- runner-up student presentation", "2021",
+  "Top Five Thesis Presentations of the AMC Engineering Cohort", "2016",
+  "Sir Eric Neal Engineering Scholarship", "2012-13",
+  "Dux of Physical Education St Joseph’s School", "2010"
+  
+) %>% 
+  
+  brief_entries(what = item, when = dates, .protect = FALSE)
+
+```
+
+# Professional Memberships
+
+```{r professional-memberships}
+
+tribble(
+  
+  ~ role, ~ dates,
+  
+  "Ecological Society of Australia", "2022-",
+  "International Biologging Society", "2020-",
+  "Australasian Wildlife Management Society", "2020-21",
+  "Ornithological Society of NZ (Birds NZ)", "2019-21"
+  
+) %>% 
+  
+  brief_entries(what = role, when = dates, .protect = FALSE)
+
+```
+
+# References
+
+```{r references}
+
+tribble(
+  
+  ~ role, ~ course, ~ organisation, ~ country, ~ details,
+  
+  "Queensland University of Technology", "Primary Supervisor", "Professor Michael Bode", "Brisbane, Australia", "Email: michael.bode@qut.edu.au",
+  "Commonwealth Scientific and Industrial Research Organisation (CSIRO)", "Primary External Supervisor", "Dr Andrew Hoskins", "Townsville, Australia", "Email: andrew.hoskins@csiro.au",
+  "Commonwealth Scientific and Industrial Research Organisation (CSIRO)", "Associate External Supervisor", "Dr Dan Pagendam", "Brisbane, Australia", "Email: dan.pagendam@data61.csiro.au"
+  
+  ) %>% 
+  
+  detailed_entries(role, course, organisation, country, details)
+
+```
+
+
+<!-- # Publications -->
+
+<!-- # ```{r} -->
+
+<!-- # ECYMO3YAAAAJ -->
+
+<!-- scholar::get_publications("ECYMO3YAAAAJ") %>%  -->
+<!--   detailed_entries( -->
+<!--     what = title, -->
+<!--     when = year, -->
+<!--     with = author, -->
+<!--     where = journal, -->
+<!--     why = cites -->
+<!--   ) -->
+
+<!-- ``` -->
+
