@@ -23,6 +23,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae)
 library(scholar)
 library(dplyr)
+library(lubridate)
 
 ```
 
@@ -95,14 +96,20 @@ tribble(
 
 ```
 
+<!-- \newpage -->
+
 # Publications
 
 ```{r pubs}
 
-knitr::write_bib(c("vitae", "tibble"), "packages.bib")
+# knitr::write_bib(c("vitae", "tibble"), "Publications-for-CV.bib")
 
-bibliography_entries("Publications-for-CV.bib") %>%
-  arrange(desc(issued))
+bibliography_entries("Publications-for-CV.bib") %>% mutate(index = row_number(),
+                                                           date_present = !is.na(issued),
+                                                           thesis = !is.na(genre),
+                                                           genre = ifelse(publisher == "Australian Maritime College", "Honour's thesis", genre)
+                                                           ) %>%
+  vitae::arrange(date_present,desc(issued))
 
 ```
 
@@ -114,20 +121,20 @@ tribble(
   
   ~ role, ~ dates,
   
-  "CSIRO Living Landscapes Science Hour - \\textbf{presenter}", "2023",
-  "International Congress on Modelling and Simulation Conference - \\textbf{presenter}", "2023",
-  "Ecological Society of Australia Conference - \\textbf{presenter}", "2023",
+  "CSIRO Living Landscapes Science Hour (virtual - \\textbf{presenter})", "2023",
+  "International Congress on Modelling and Simulation Conference (\\textbf{presenter})", "2023",
+  "Ecological Society of Australia Conference (\\textbf{presenter})", "2023",
   "CSIRO Machine Learning and Artificial Intelligence Reimagining Science Symposium", "2023",
-  "Applied Mathematical Ecology Group Symposium - \\textbf{presenter}", "2023",
-  "Ecological Society of Australia / Society for Conservation Biology Oceania Conference - \\textbf{presenter}", "2022",
+  "Applied Mathematical Ecology Group Symposium (\\textbf{presenter})", "2023",
+  "Ecological Society of Australia / Society for Conservation Biology Oceania Conference (\\textbf{presenter})", "2022",
   "Australian Data Science Network Conference", "2022",
-  "International Statistical Ecology Conference", "2022",
+  "International Statistical Ecology Conference (virtual)", "2022",
   "Queensland and New Zealand Institute of Applied Mathematics Conference", "2022",
-  "International Biologging Society Conference (BLS7) - \\textbf{presenter}", "2021",
-  "University of Otago Zoology Departmental Seminar - \\textbf{presenter}", "2021",
-  "Birds NZ Conference - \\textbf{presenter}", "2021",
-  "Australasian Wildlife Management Society Conference - \\textbf{presenter}", "2020",
-  "Otago Postgraduate Research Symposium - \\textbf{presenter}", "2019"
+  "International Biologging Society Conference (BLS7) (virtual - \\textbf{presenter})", "2021",
+  "University of Otago Zoology Departmental Seminar (\\textbf{presenter})", "2021",
+  "Birds NZ Conference - (\\textbf{presenter})", "2021",
+  "Australasian Wildlife Management Society Conference (virtual - \\textbf{presenter})", "2020",
+  "Otago Postgraduate Research Symposium (\\textbf{presenter})", "2019"
   
 ) %>% 
   
@@ -160,6 +167,7 @@ tribble(
 
 ```
 
+\newpage
 
 # Grants
 
@@ -181,7 +189,7 @@ tribble(
 
 ```
 
-\newpage
+
 
 # Scholarships and Awards
 
