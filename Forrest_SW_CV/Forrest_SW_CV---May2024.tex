@@ -1,0 +1,326 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+%
+% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 23 November 2018
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt,a4paper,]{awesome-cv}
+
+% Configure page margins with geometry
+\usepackage{geometry}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+
+\definecolor{awesome}{HTML}{311B92}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+\def\endfirstpage{\newpage}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+
+\name{Scott William}{Forrest}
+
+\position{PhD Candidate}
+\address{School of Mathematical Sciences, Queensland University of
+Technology}
+
+\pronouns{he/him}
+\mobile{+61 436 392 070}
+\email{\href{mailto:scott.forrest@hdr.qut.edu.au}{\nolinkurl{scott.forrest@hdr.qut.edu.au}}}
+\github{swforrest}
+\linkedin{swforrest}
+\twitter{scottwilliamf}
+
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \skype{skype-id}
+% \reddit{reddit-id}
+
+
+\usepackage{booktabs}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%------------------------------------------------------------------------------
+
+
+
+% Pandoc CSL macros
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+% 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
+\makecvfooter
+  {August 2024}
+    {Scott William Forrest~~~·~~~Curriculum Vitae}
+  {\thepage~ of \pageref{LastPage}~}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%------------------------------------------------------------------------------
+
+
+
+\section{Education}\label{education}
+
+\begin{cventries}
+    \cventry{PhD in Mathematical Sciences}{Queensland University of Technology}{Brisbane, Australia}{2022 -}{\begin{cvitems}
+\item Thesis title: Modelling animal movement with stochastic simulations and deep learning
+\item In my thesis I am developing new methodologies for modelling animal movement, with a focus on stochastic simulations.
+\item I will apply the methodologies we develop to feral buffalo (\textit{Bubalus bubalis}) and cattle (\textit{Bos indicus}) in Northern Australia's tropical savannas.
+\end{cvitems}}
+    \cventry{Master of Science in Wildlife Management}{University of Otago}{Dunedin, New Zealand}{2020-21}{\begin{cvitems}
+\item Thesis title: Operation Kākā Repopulation: Using GPS tracking and spatial modelling to restore a flagship species.
+\item During my thesis I GPS-tracked kākā (\textit{Nestor meridionalis}) and quantified their space use and resource selection, as well as their behaviours through accelerometry data.
+\end{cvitems}}
+    \cventry{Postgraduate Diploma in Wildlife Management}{University of Otago}{Dunedin, New Zealand}{2018-19}{\begin{cvitems}
+\item Coursework-based diploma with a focus on field ecology.
+\end{cvitems}}
+    \cventry{Bachelor of Engineering (with Honours) in Naval Architecture}{Flinders University and Australian Maritime College}{Adelaide and Launceston, Australia}{2012-16}{\begin{cvitems}
+\item Honours thesis title: Ship-generated solitons and the dynamic vessel response as a function of blockage.
+\end{cvitems}}
+\end{cventries}
+
+\section{Relevant Employment History}\label{relevant-employment-history}
+
+\begin{cventries}
+    \cventry{Tutor}{Queensland University of Technology}{Brisbane, Australia}{2023}{\begin{cvitems}
+\item Work Integrated Learning for Applied and Computational Mathematics (MXB328)
+\end{cvitems}}
+    \cventry{Teaching Fellow}{University of Otago}{Dunedin, New Zealand}{2020-21}{\begin{cvitems}
+\item Animal Biology (BIOL112)
+\end{cvitems}}
+    \cventry{Statistics Mentor for Postgraduate Students}{University of Otago}{Dunedin, New Zealand}{2019-21}{\begin{cvitems}
+\item Spatial ecology (home range estimation, resource selection, Species Distribution Modelling)
+\item GLM/GLMM, model selection and multi-model inference
+\item Animal growth data and nesting success
+\end{cvitems}}
+    \cventry{Demonstrator}{University of Otago}{Dunedin, New Zealand}{2018-21}{\begin{cvitems}
+\item Biological Data Analysis and Computing (ZOOL316/WILM404)
+\item Conservation Biology (ZOOL319)
+\item Animal Biology (BIOL112)
+\item Cell Biology (CELS191)
+\end{cvitems}}
+\end{cventries}
+
+\section{Publications}\label{publications}
+
+\phantomsection\label{refs-3e3d6a4d527f4154aec269012946414f}
+\begin{CSLReferences}{0}{0}
+\bibitem[\citeproctext]{ref-Cowan-M-A-Forrest-S-W-Setterfield-S-A-Dunlop-J-A-Gibson-L-A-Moore-H-A-Nimmo-D-GUnknown-ts}
+\CSLLeftMargin{1. }%
+\CSLRightInline{Cowan, M. A., Forrest, S. W., Setterfield, S. A.,
+Dunlop, J. A., Gibson, L. A., Moore, H. A., Nimmo, D. G. (n.d.). The
+impact of mining on animal movement and landscape connectivity revealed
+through simulations and scenarios. \emph{Ecological Applications (In
+Review)}.}
+
+\bibitem[\citeproctext]{ref-Forrest2024-ig}
+\CSLLeftMargin{2. }%
+\CSLRightInline{Forrest, S. W., Rodríguez-Recio, M., \& Seddon, P. J.
+(2024). Home range and dynamic space use reveals age-related differences
+in risk exposure for reintroduced parrots. \emph{Conservation Science
+and Practice}, e13119. \url{https://doi.org/10.1111/csp2.13119}}
+
+\bibitem[\citeproctext]{ref-Forrest2024-xe}
+\CSLLeftMargin{3. }%
+\CSLRightInline{Forrest, S. W., Pagendam, D., Bode, M., Drovandi, C.,
+Potts, J. R., Perry, J., Vanderduys, E., \& Hoskins, A. J. (2024).
+Predicting fine-scale distributions and emergent spatiotemporal patterns
+from temporally dynamic step selection simulations. \emph{bioRxiv},
+2024.03.19.585696. \url{https://doi.org/10.1101/2024.03.19.585696}}
+
+\bibitem[\citeproctext]{ref-Forrest2022-is}
+\CSLLeftMargin{4. }%
+\CSLRightInline{Forrest, S. W., Rodríguez-Recio, M., \& Seddon, P. J.
+(2022). Moving wildlife tracking forward under forested conditions with
+the SWIFT GPS algorithm. \emph{Animal Biotelemetry 2022 10:1},
+\emph{10}(1), 1--11. \url{https://doi.org/10.1186/S40317-022-00289-9}}
+
+\bibitem[\citeproctext]{ref-Forrest2021-dq}
+\CSLLeftMargin{5. }%
+\CSLRightInline{Forrest, S. W. (2021). \emph{Space use and resource
+selection of the orokonui ecosanctuary kākā (nestor meridionalis)
+population} {[}Master's thesis{]}. University of Otago; University of
+Otago.}
+
+\bibitem[\citeproctext]{ref-Forrest2016-uh}
+\CSLLeftMargin{6. }%
+\CSLRightInline{Forrest, S. W., Macfarlane, G. J., \& Robbins, R.
+(2016). \emph{Ship-generated solitons and the dynamic vessel response
+due to blockage coefficient} {[}Honour's thesis{]}. Australian Maritime
+College.}
+
+\end{CSLReferences}
+
+\section{Presentations and Conference
+Attendance}\label{presentations-and-conference-attendance}
+
+\begin{cvhonors}
+    \cvhonor{}{QUT Resilience Centre and UQ Centre for Biodiversity and Conservation Science ECR event (\textbf{speaker})}{}{2024}
+    \cvhonor{}{Geospatial Share Workshop - Animal Movement Modelling (\textbf{lead presenter})}{}{2024}
+    \cvhonor{}{Time-Series Modelling Workshop (\textbf{presenter})}{}{2024}
+    \cvhonor{}{Applied Mathematical Ecology Group Symposium (\textbf{presenter})}{}{2024}
+    \cvhonor{}{CSIRO Living Landscapes Science Hour (virtual - \textbf{presenter})}{}{2023}
+    \cvhonor{}{International Congress on Modelling and Simulation Conference (\textbf{presenter})}{}{2023}
+    \cvhonor{}{Ecological Society of Australia Conference (\textbf{presenter})}{}{2023}
+    \cvhonor{}{CSIRO Machine Learning and Artificial Intelligence Reimagining Science Symposium}{}{2023}
+    \cvhonor{}{Applied Mathematical Ecology Group Symposium (\textbf{presenter})}{}{2023}
+    \cvhonor{}{Ecological Society of Australia / Society for Conservation Biology Oceania Conference (\textbf{presenter})}{}{2022}
+    \cvhonor{}{Australian Data Science Network Conference}{}{2022}
+    \cvhonor{}{International Statistical Ecology Conference (virtual)}{}{2022}
+    \cvhonor{}{Queensland and New Zealand Institute of Applied Mathematics Conference}{}{2022}
+    \cvhonor{}{International Biologging Society Conference (BLS7) (virtual - \textbf{presenter})}{}{2021}
+    \cvhonor{}{University of Otago Zoology Departmental Seminar (\textbf{presenter})}{}{2021}
+    \cvhonor{}{Birds NZ Conference - (\textbf{presenter})}{}{2021}
+    \cvhonor{}{Australasian Wildlife Management Society Conference (virtual - \textbf{presenter})}{}{2020}
+    \cvhonor{}{Otago Postgraduate Research Symposium (\textbf{presenter})}{}{2019}
+\end{cvhonors}
+
+\section{Volunteering, Fieldwork and Community
+Outreach}\label{volunteering-fieldwork-and-community-outreach}
+
+\begin{cvhonors}
+    \cvhonor{}{\textbf{CSIRO and Queensland University of Technology}: PhD fieldwork, Arnhem Land, Australia \newline Attaching GPS devices to feral buffalo (\textit{Bubalus bubalis})}{}{2023\newline}
+    \cvhonor{}{\textbf{University of Otago}: MSc fieldwork, Orokonui Ecosanctuary, Dunedin, New Zealand \newline Attaching VHF and GPS devices to kākā (\textit{Nestor meridionalis}) and collecting data multiple times each week}{}{2020-21\newline}
+    \cvhonor{}{\textbf{Orokonui Ecosanctuary}: Education Outreach Team, Dunedin, New Zealand \newline Educational tours for school and public groups within Orokonui Ecosanctuary.}{}{2020-21\newline}
+    \cvhonor{}{\textbf{University of Otago}: Zoology Tertiary Open Day Coordinator, Dunedin, New Zealand \newline Organising and running the Zoology stand at the University of Otago Tertiary Open Day.}{}{2020\newline}
+    \cvhonor{}{\textbf{Otago Museum}: Science Fair Judge, Dunedin, New Zealand \newline Judging science fair projects for secondary school students.}{}{2020\newline}
+    \cvhonor{}{\textbf{Department of Conservation}: Kākā (\textit{Nestor meridionalis}) Recovery Team, Fiordland National Park, New Zealand \newline Mist-netting kākā and attaching telemetry devices.}{}{2019\newline}
+    \cvhonor{}{\textbf{Department of Conservation}: Kākāpō (\textit{Strigops habroptil}) Recovery Team, Whenua Hou (Codfish Island), New Zealand \newline Juvenile kākāpō feeding and health checks, telemetry device attachment and triangulation.}{}{2019\newline}
+    \cvhonor{}{\textbf{Dunedin Halo Project}: Biodiversity Monitoring, Dunedin, New Zealand \newline Monitoring of pest control tracking tunnels.}{}{2019\newline}
+    \cvhonor{}{\textbf{Department of Conservation}: Takahē (\textit{Porphyrio hochstetteri}) Recovery Team, Kahurangi National Park \newline Takahē telemetry triangulation and health checks.}{}{2018\newline}
+    \cvhonor{}{\textbf{Montana Fish, Wildlife and Parks}: Gray Wolf (\textit{Canis lupus}) Program, Western Montana, USA \newline Gray wolf telemetry triangulation and assessment of presence through faeces and markings.}{}{2017\newline}
+    \cvhonor{}{\textbf{Comunidad Inti Wara Yassi (CIWY)}: Puma/Jaguar Caretaker, Parque Ambue Ari, Bolivia \newline Caring for rehabilitated pumas (\textit{Puma concolor}) and jaguars (\textit{Panthera onca}).}{}{2014\newline}
+\end{cvhonors}
+
+\newpage
+
+\section{Grants}\label{grants}
+
+\begin{cvhonors}
+    \cvhonor{}{\textbf{University Teaching and Development Grant}: Principal Investigator, \$10,124 \newline Integrating MOOC platform xOtago into the teaching of Zoology papers for future flexibility and resilience}{}{2020-21\newline}
+    \cvhonor{}{\textbf{Dunedin City Council Parks and Reserves}: Principal Investigator, \$15,000 \newline GPS tracking kākā from Orokonui Ecosanctuary}{}{2020\newline}
+    \cvhonor{}{\textbf{OSPRI}: Principal Investigator, \$7,000 \newline GPS tracking kākā from Orokonui Ecosanctuary}{}{2020\newline}
+    \cvhonor{}{\textbf{High Country Contracting}: Principal Investigator, \$2,000 \newline GPS tracking kākā from Orokonui Ecosanctuary}{}{2020\newline}
+\end{cvhonors}
+
+\section{Scholarships and Awards}\label{scholarships-and-awards}
+
+\begin{cvhonors}
+    \cvhonor{}{QUT PhD Research Training Program (RTP) Stipend Scholarship}{}{2022-}
+    \cvhonor{}{Commonwealth Scientific and Industrial Research Organisation (CSIRO) Top-Up Scholarship}{}{2022-}
+    \cvhonor{}{International Biologging Society Conference (BLS7)- runner-up student presentation}{}{2021}
+    \cvhonor{}{Top Five Thesis Presentations of the AMC Engineering Cohort}{}{2016}
+    \cvhonor{}{Sir Eric Neal Engineering Scholarship}{}{2012-13}
+    \cvhonor{}{Dux of Physical Education St Joseph’s School}{}{2010}
+\end{cvhonors}
+
+\section{Professional Memberships}\label{professional-memberships}
+
+\begin{cvhonors}
+    \cvhonor{}{Ecological Society of Australia}{}{2022-}
+    \cvhonor{}{International Biologging Society}{}{2020-}
+    \cvhonor{}{Australasian Wildlife Management Society}{}{2020-21}
+    \cvhonor{}{Ornithological Society of NZ (Birds NZ)}{}{2019-21}
+\end{cvhonors}
+
+\section{References}\label{references}
+
+\begin{cventries}
+    \cventry{Queensland University of Technology}{Professor Michael Bode}{Brisbane, Australia}{Primary Supervisor}{\begin{cvitems}
+\item Email: michael.bode@qut.edu.au
+\end{cvitems}}
+    \cventry{Commonwealth Scientific and Industrial Research Organisation (CSIRO)}{Dr Andrew Hoskins}{Townsville, Australia}{Primary External Supervisor}{\begin{cvitems}
+\item Email: andrew.hoskins@csiro.au
+\end{cvitems}}
+    \cventry{Commonwealth Scientific and Industrial Research Organisation (CSIRO)}{Dr Dan Pagendam}{Brisbane, Australia}{Associate External Supervisor}{\begin{cvitems}
+\item Email: dan.pagendam@data61.csiro.au
+\end{cvitems}}
+\end{cventries}
+
+
+\label{LastPage}~
+\end{document}

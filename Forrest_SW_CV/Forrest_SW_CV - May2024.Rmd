@@ -104,12 +104,22 @@ tribble(
 
 # knitr::write_bib(c("vitae", "tibble"), "Publications-for-CV.bib")
 
+# Function to extract the year from a CSL-JSON date
+extract_year <- function(date) {
+  if (!is.null(date$`date-parts`)) {
+    return(as.numeric(date$`date-parts`[[1]][1]))
+  } else {
+    return(NA)
+  }
+}
+
 bibliography_entries("Publications-for-CV.bib") %>% mutate(index = row_number(),
                                                            date_present = !is.na(issued),
                                                            thesis = !is.na(genre),
+                                                           year = sapply(issued, extract_year),
                                                            genre = ifelse(publisher == "Australian Maritime College", "Honour's thesis", genre)
                                                            ) %>%
-  vitae::arrange(date_present,desc(issued))
+  vitae::arrange(date_present,desc(year))
 
 ```
 
@@ -121,6 +131,10 @@ tribble(
   
   ~ role, ~ dates,
   
+  "QUT Resilience Centre and UQ Centre for Biodiversity and Conservation Science ECR event (\\textbf{speaker})", "2024",
+  "Geospatial Share Workshop - Animal Movement Modelling (\\textbf{lead presenter})", "2024",
+  "Time-Series Modelling Workshop (\\textbf{presenter})", "2024",
+  "Applied Mathematical Ecology Group Symposium (\\textbf{presenter})", "2024",
   "CSIRO Living Landscapes Science Hour (virtual - \\textbf{presenter})", "2023",
   "International Congress on Modelling and Simulation Conference (\\textbf{presenter})", "2023",
   "Ecological Society of Australia Conference (\\textbf{presenter})", "2023",
@@ -152,7 +166,8 @@ tribble(
 
 tribble(
   ~ role, ~ organisation, ~ place, ~ dates, ~ details,
-  "PhD fieldwork", "Queensland University of Technology and CSIRO", "Arnhem Land, Australia", "2023", "Attaching GPS devices to feral buffalo (\\textit{Bubalus bubalis})",
+  "PhD fieldwork", "CSIRO and Queensland University of Technology", "Arnhem Land, Australia", "2023", "Attaching GPS devices to feral buffalo (\\textit{Bubalus bubalis})",
+  "MSc fieldwork", "University of Otago", "Orokonui Ecosanctuary, Dunedin, New Zealand", "2020-21", "Attaching VHF and GPS devices to kākā (\\textit{Nestor meridionalis}) and collecting data multiple times each week",
   "Education Outreach Team", "Orokonui Ecosanctuary", "Dunedin, New Zealand", "2020-21", "Educational tours for school and public groups within Orokonui Ecosanctuary.",
   "Zoology Tertiary Open Day Coordinator", "University of Otago", "Dunedin, New Zealand", "2020", "Organising and running the Zoology stand at the University of Otago Tertiary Open Day.",
   "Science Fair Judge", "Otago Museum", "Dunedin, New Zealand", "2020", "Judging science fair projects for secondary school students.",
