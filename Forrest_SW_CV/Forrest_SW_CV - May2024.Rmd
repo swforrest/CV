@@ -5,7 +5,6 @@ position: "PhD Candidate"
 pronouns: he/him
 address: "School of Mathematical Sciences, Queensland University of Technology"
 phone: +61 436 392 070
-# www: mariecurie.com
 email: "scott.forrest@hdr.qut.edu.au"
 twitter: scottwilliamf
 github: swforrest
@@ -14,7 +13,7 @@ headcolor: 311B92
 date: "`r format(Sys.time(), '%B %Y')`"
 output:
   vitae::awesomecv:
-    page_total: true
+    page_total: false
 ---
 
 ```{r setup, include=FALSE}
@@ -26,12 +25,6 @@ library(dplyr)
 library(lubridate)
 
 ```
-
-<!-- # Some stuff about me -->
-
-<!--  * I poisoned myself doing research. -->
-<!--  * I was the first woman to win a Nobel prize -->
-<!--  * I was the first person and only woman to win a Nobel prize in two different sciences. -->
 
 # Education
 
@@ -134,6 +127,14 @@ tribble(
   "QUT Resilience Centre and UQ Centre for Biodiversity and Conservation Science ECR event (\\textbf{speaker})", "2024",
   "Geospatial Share Workshop - Animal Movement Modelling (\\textbf{lead presenter})", "2024",
   "Time-Series Modelling Workshop (\\textbf{presenter})", "2024",
+  "International Statistical Ecology Conference (\\textbf{presenter})", "2024",
+  "University of Potsdam Research Visit (\\textbf{presenter})", "2024",
+  "University of Göttingen Research Visit (\\textbf{presenter})", "2024",
+  "Bayesian Research and Applications Group (\\textbf{presenter})", "2024",
+  "Queensland and New Zealand Institute of Applied Mathematics Conference (\\textbf{presenter})", "2024",
+  "QUT Resilience Centre and UQ Centre for Biodiversity and Conservation Science ECR event (\\textbf{speaker})", "2024",
+  "Geospatial Share Workshop - Animal Movement Modelling (\\textbf{lead presenter})", "2024",
+  "Time-Series Modelling Workshop (\\textbf{organiser and presenter})", "2024",
   "Applied Mathematical Ecology Group Symposium (\\textbf{presenter})", "2024",
   "CSIRO Living Landscapes Science Hour (virtual - \\textbf{presenter})", "2023",
   "International Congress on Modelling and Simulation Conference (\\textbf{presenter})", "2023",
@@ -158,10 +159,6 @@ tribble(
 
 # Volunteering, Fieldwork and Community Outreach
 
-<!-- \begin{cvparagraph} -->
-<!-- In addition to sessional tutoring, I also teach data analysis workshops for industry professionals. -->
-<!-- \end{cvparagraph} -->
-
 ```{r volunteering}
 
 tribble(
@@ -182,7 +179,7 @@ tribble(
 
 ```
 
-\newpage
+<!-- \newpage -->
 
 # Grants
 
@@ -204,8 +201,6 @@ tribble(
 
 ```
 
-
-
 # Scholarships and Awards
 
 ```{r}
@@ -214,6 +209,7 @@ tribble(
   
   ~ item, ~ dates,
   
+  "International Statistical Ecology Conference (ISEC) Student Presentation Award", "2024",
   "QUT PhD Research Training Program (RTP) Stipend Scholarship", "2022-",
   "Commonwealth Scientific and Industrial Research Organisation (CSIRO) Top-Up Scholarship", "2022-",
   "International Biologging Society Conference (BLS7)- runner-up student presentation", "2021",
@@ -255,30 +251,12 @@ tribble(
   ~ role, ~ course, ~ organisation, ~ country, ~ details,
   
   "Queensland University of Technology", "Primary Supervisor", "Professor Michael Bode", "Brisbane, Australia", "Email: michael.bode@qut.edu.au",
-  "Commonwealth Scientific and Industrial Research Organisation (CSIRO)", "Primary External Supervisor", "Dr Andrew Hoskins", "Townsville, Australia", "Email: andrew.hoskins@csiro.au",
-  "Commonwealth Scientific and Industrial Research Organisation (CSIRO)", "Associate External Supervisor", "Dr Dan Pagendam", "Brisbane, Australia", "Email: dan.pagendam@data61.csiro.au"
+  "Commonwealth Scientific and Industrial Research Organisation (CSIRO)", "Associate External Supervisor", "Dr Dan Pagendam", "Brisbane, Australia", "Email: dan.pagendam@data61.csiro.au",
+  "Commonwealth Scientific and Industrial Research Organisation (CSIRO)", "Primary External Supervisor", "Dr Andrew Hoskins", "Townsville, Australia", "Email: andrew.hoskins@csiro.au"
   
   ) %>% 
   
   detailed_entries(role, course, organisation, country, details)
 
 ```
-
-
-<!-- # Publications -->
-
-<!-- # ```{r} -->
-
-<!-- # ECYMO3YAAAAJ -->
-
-<!-- scholar::get_publications("ECYMO3YAAAAJ") %>%  -->
-<!--   detailed_entries( -->
-<!--     what = title, -->
-<!--     when = year, -->
-<!--     with = author, -->
-<!--     where = journal, -->
-<!--     why = cites -->
-<!--   ) -->
-
-<!-- ``` -->
 
